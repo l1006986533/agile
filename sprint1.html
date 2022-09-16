@@ -65,8 +65,9 @@
             </div>
         </div>
         <div style="position:fixed;bottom:10px;display:flex;width:100%;">
-            <textarea id='input_text' style="flex:1;height:50px;"></textarea>
-            <button onclick="add()">send</button>
+            <!--click Enter to send-->
+            <textarea id='input_text' style="flex:1;height:50px;" onkeydown="if(event.keyCode==13){send_button.click()}"></textarea>
+            <button id='send_button' onclick="add()">send</button>
             &nbsp;&nbsp;
         </div>
     </body>
@@ -76,12 +77,19 @@
             var div = document.createElement("div");
             var span  = document.createElement("span");
             var text = document.createTextNode(s);
-            span.appendChild(text);
-            span.classList.add("item");
-            div.classList.add("right_line");
-            var body = document.getElementById("body");
-            div.appendChild(span)
-            body.appendChild(div);
+            if(s==""){
+                alert("You didn't enter anything!")
+            }
+            else{
+                span.appendChild(text);
+                span.classList.add("item");
+                div.classList.add("right_line");
+                var body = document.getElementById("body");
+                div.appendChild(span)
+                body.appendChild(div);
+                //clear input_text
+                document.getElementById('input_text').value=''
+            }
         }
     </script>
 </html>

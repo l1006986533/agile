@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style type="text/css">
+    html,body{
+        height: 100%;
+    }
+    body{
+        background:gainsboro;
+    }
+    .left_line .item {
+        max-width: 192px;
+        display: inline-block;
+        background: white;
+        border-radius: 5px;
+        line-height: 25px;
+        margin-left: 10px;
+        word-break: break-word;
+        padding: 5px;
+    }
+    .left_line::before {
+        position: absolute;
+        content: "";
+        border: 8px solid transparent;
+        border-right-color: white;
+        margin-top: 10px;
+        margin-left: -5px;
+    }
+    .left_line{
+        margin-bottom: 10px;
+    }
+    .right_line .item {
+        max-width: 192px;
+        background: rgb(169, 234, 122);
+        display: inline-block;
+        border-radius: 5px;
+        line-height: 25px;
+        margin-right: 10px;
+        word-break: break-all;
+        padding: 5px;
+        text-align: left;
+    }
+    .right_line::after {
+        position: absolute;
+        content: "";
+        border: 8px solid transparent;
+        border-left-color: rgb(169, 234, 122);;
+        margin-left: -10px;
+        margin-top: 10px;
+    }
+    .right_line{
+        text-align: right;
+        margin-bottom: 10px;
+    }
+    </style>
+    <body>
+        <div id="body">
+            <div class="left_line">
+                <span class="item">
+                    Hello world!
+                </span>
+            </div>
+        </div>
+        <div style="position:fixed;bottom:10px;display:flex;width:100%;">
+            <textarea id='input_text' style="flex:1;height:50px;"></textarea>
+            <button onclick="add()">send</button>
+            &nbsp;&nbsp;
+        </div>
+    </body>
+    <script>
+        function add(){
+            var s = document.getElementById('input_text').value;
+            var div = document.createElement("div");
+            var span  = document.createElement("span");
+            var text = document.createTextNode(s);
+            span.appendChild(text);
+            span.classList.add("item");
+            div.classList.add("right_line");
+            var body = document.getElementById("body");
+            div.appendChild(span)
+            body.appendChild(div);
+        }
+    </script>
+</html>

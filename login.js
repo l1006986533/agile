@@ -10,7 +10,7 @@ loginButton.addEventListener("click", (e) => {
     
     
 
-    if (username === "Iamuser" && password === "student") {
+    if (username === "Iamuser" && password === "abc123") {
         alert("Great you entered");
         window.location.href="sprint1.html";
     } else {

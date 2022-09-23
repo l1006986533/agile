@@ -5,31 +5,31 @@ html {
 body {
   height: 150%;
   margin: 0;
-  font_family: Arial, Helvetica, sans_serif;
+  font-family: Arial, Helvetica, sans_serif;
   display: grid;
-  justify_items: center;
-  align_items: center;
-  background_color: violet;
+  justify-items: center;
+  align-items: center;
+  background-color: violet;
 }
 
 #main_holder {
   width: 50%;
   height: 70%;
   display: grid;
-  justify_items: center;
-  align_items: center;
-    background_color: aliceblue;
-  border_radius: 7px;
-  box_shadow: 0px 0px 5px 2px black;
+  justify-items: center;
+  align-items: center;
+  background-color: aliceblue;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 2px black;
 }
 
 
 
 #create_form {
-  align_self: flex_start;
+  align-self: flex_start;
   display: grid;
-  justify_items: center;
-  align_items: center;
+  justify-items: center;
+  align-items: center;
 }
 
 .create_form_field::placeholder {
@@ -38,9 +38,9 @@ body {
 
 .create_form_field {
   border: none;
-  border_bottom: 1px solid #3a3a3a;
-  margin_bottom: 10px;
-  border_radius: 3px;
+  border-bottom: 1px solid #3a3a3a;
+  margin-bottom: 10px;
+  border-radius: 3px;
   outline: none;
   padding: 0px 0px 5px 5px;
 }
@@ -49,10 +49,10 @@ body {
   width: 100%;
   padding: 7px;
   border: none;
-  border_radius: 5px;
+  border-radius: 5px;
   color: white;
-  font_weight: bold;
-  background_color: #3a3a3a;
+  font-weight: bold;
+  background-color: #3a3a3a;
   cursor: pointer;
   outline: none;
 }

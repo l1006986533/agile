@@ -67,7 +67,7 @@
         <div style="position:fixed;bottom:10px;display:flex;width:100%;">
             <!--click Enter to send-->
             <textarea id='input_text' maxlength="280" style="flex:1;height:50px;" 
-                onkeydown="if(event.keyCode==13) send_button.click()
+                onkeyup="if(event.keyCode==13) send_button.click()
                 else if(this.value.length==280) alert('Can\'t send message longer than 280 letters!')"
             ></textarea>
             <button id='send_button' onclick="add()">send</button>

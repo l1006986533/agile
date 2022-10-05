@@ -1,0 +1,151 @@
+<style>
+    html,
+    body {
+        height: 99%;
+        width: 99%;
+        background: #f0f0f0;
+        font-size: 14px;
+    }
+    .head{
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        background-color: #fff;
+    }
+    .item {
+        width: 100%;
+        height: 120px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #eee;
+        background-color: #fff;
+        display: flex;
+    }
+    .avatar {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        position: absolute;
+        left: 10px;
+        margin-top: 8px;
+        object-fit: cover;
+    }
+    .des {
+        height: 120px;
+        display: inline-block;
+        margin-left: 130px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        flex: 1;
+    }
+    .name {
+        margin-top: 10px;
+    }
+    .name span {
+        height: 50px;
+        line-height: 50px;
+        font-size: 32px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .status {
+        /*height: 30px;*/
+        margin-top: -5px;
+    }
+    .status span {
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+        color: gray;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .pic{
+        float: right;
+        background-size:30px 30px;
+        height: 30px;
+        width: 30px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .add{
+        float: right;
+        height: 40px;
+        margin-right: 10px;
+    }
+    .tip{
+        position:relative;
+        width:10px;
+        height:10px;
+        left: 20px;
+        -webkit-border-radius: 50%;
+        border-radius:50%;
+        background:rgba(250,60,0,1);
+        display: none;
+    }
+    .rotate{
+        animation: rotatekf 1s;
+    }
+    @keyframes rotatekf {
+        0%{
+            transform: rotate(0turn);
+        }
+        100%{
+            transform: rotate(1turn);
+        }
+    }
+</style>
+
+<body>
+    <div class="head">
+        <div style="background-image: url('../img/request.jpg')" id="friend_request" class="pic">
+            <div class="tip" id="tip"></div>
+        </div>
+        <div style="background-image: url('../img/refresh.png');" class="pic" onclick="f(this)"></div>
+        <div style="background-image: url('../img/add.png');" class="pic" onclick="f2()"></div>
+        <div class="add" id="add" hidden>
+            <input style="margin-top:15px;" onkeyup="if(event.keyCode==13) f3(this)">
+        </div>
+    </div>
+    <div class="item">
+        <img class="avatar" src="../img/avatar1.jpeg">
+        <div class="des">
+            <div class="name"><span>Name1</span></div>
+            <div class="status"><span>Status1</span></div>
+        </div>
+    </div>
+    <div class="item">
+        <img class="avatar" src="../img/avatar2.jpeg">
+        <div class="des">
+            <div class="name"><span>Name2</span></div>
+            <div class="status"><span>Status2</span></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function f(refresh_button){
+        refresh_button.classList.add('rotate')
+        tip.style.display='block';
+        friend_request.setAttribute('onclick','window.location.href="friend_request.html"');
+    }
+    function f2(){
+        if (add.hasAttribute('hidden')){
+            add.removeAttribute('hidden')
+        }else{
+            add.setAttribute('hidden','')
+        }
+    }
+    function f3(add_input){
+        var s=add_input.value
+        if(s.length>16){
+            alert('Username can\'t be longer than 16 letters!')
+        }else if(s=='liao' || s=='Liao'){
+            alert('Send friend request successfully!')
+        }else{
+            alert('This user does not exist!')
+        }
+    }
+</script>

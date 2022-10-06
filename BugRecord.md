@@ -8,3 +8,6 @@
 
 1002
 1. Fix a bug, press ENTER, massage sent, and no blank line left.
+
+1006
+1. Set the name to center

@@ -1,7 +1,6 @@
 exports.add_text=add_text
 exports.add_element=add_element
 exports.add_emoji=add_emoji
-exports.search_and_add_friend=search_and_add_friend
 
 function add_text(s){
     if(s==""){
@@ -57,14 +56,4 @@ function add_element(event){
 
 function add_emoji(e){
     document.getElementById('input_text').value+=e.native
-}
-
-function search_and_add_friend(s){
-    if(s.length>16){
-        return 'Username can\'t be longer than 16 letters!'
-    }else if(s=='liao' || s=='Liao'){
-        return 'Send friend request successfully!'
-    }else{
-        return 'This user does not exist!'
-    }
 }

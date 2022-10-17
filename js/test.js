@@ -4,6 +4,7 @@ const friend = require("./friend.js")
 const { add_element, add_emoji } = chat;
 const { login } = loginjs;
 const {search_and_add_friend} = friend;
+
 describe('Unit test', () => {
     test("Login", () => {
         expect(

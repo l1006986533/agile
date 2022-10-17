@@ -109,7 +109,7 @@
         <div id="body">
             <div class="left_line">
                 <span class="item">
-                    Hello world!
+                    Hello! This is Liao.
                 </span>
             </div>
         </div>
@@ -123,7 +123,7 @@
             </label></button>
             <!--click Enter to send-->
             <textarea id='input_text' maxlength="280" style="flex:1;height:50px;font-size:larger;" 
-                onkeydown="if(event.keyCode==13) send_button.click()
+                onkeyup="if(event.keyCode==13) send_button.click()
                 else if(this.value.length==280) alert('Can\'t send message longer than 280 letters!')"
             ></textarea>
             <img src="../img/emoji.png" style="position: absolute; right: 63px;top:10px; width:25px;" onclick="emoji_click()"/>

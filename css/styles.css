@@ -26,3 +26,7 @@ main{
     margin-left: -70px;
     margin-right: 30px;
   }
+  #name{
+    margin-left: 25px;
+    font-size: 30px;
+  }

@@ -36,10 +36,3 @@ describe('Unit test', () => {
           .toBe('Username can\'t be longer than 16 letters!');
     });
 })
-describe('Integration test', () => {
-    test("Send mix messages(videos, images, emojis and texts)", () => {
-        expect(() => {
-            add_element('../img/avatar1.jpeg','../img/1.mp4','😊','and some texts');
-        })
-    });
-})

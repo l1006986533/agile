@@ -85,6 +85,12 @@
         background:rgba(250,60,0,1);
         display: none;
     }
+    .logout{
+        float: right;
+        height: 25px;
+        margin-right: 10px;
+        margin-top:10px; font-size: 15px;
+    }
     .rotate{
         animation: rotatekf 1s;
     }
@@ -107,7 +113,12 @@
         <div style="background-image: url('../img/add.png');" class="pic" onclick="f2()"></div>
         <div class="add" id="add" hidden>
             <input style="margin-top:10px; font-size: 20px;" onkeyup="if(event.keyCode==13) f3(this)">
+            
         </div>
+            <button type="button" class="logout" onclick="window.location.href='login.html'">logout</button>
+    
+            
+        
     </div>
     <div class="item" onclick="window.location.href='chat_Li.html'">
         <img class="avatar" src="../img/avatar5.jpg">
@@ -121,6 +132,7 @@
         <div class="des">
             <div class="name"><span>Suvoj</span></div>
             <div class="status"><span>饿饿</span></div>
+            
         </div>
     </div>
     <div class="item" onclick="window.location.href='chat_Liao.html'">
@@ -129,6 +141,7 @@
             <div class="name"><span>Liao</span></div>
             <div class="status"><span>My avatar is so strange XD</span></div>
         </div>
+        
     </div>
 </body>
 

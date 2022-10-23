@@ -106,7 +106,7 @@
 
 <body>
     <div class="head">
-        <div style="background-image: url('../img/request.jpg')" id="friend_request" class="pic">
+        <div style="background-image: url('../img/request.jpg')" id="friend_request" class="pic" onclick="window.location.href='profile.html'">
             <div class="tip" id="tip"></div>
         </div>
         <div style="background-image: url('../img/refresh.png');" class="pic" onclick="f(this)"></div>
@@ -116,11 +116,11 @@
         </div>
         <button type="button" class="logout" onclick="window.location.href='login.html'">logout</button>
     </div>
-    <div class="item" onclick="window.location.href='chat.html?name=Li'">
-        <img class="avatar" src="../img/avatar5.jpg">
+    <div class="item" onclick="window.location.href='chat.html?name='+(localStorage.getItem('Name')?localStorage.getItem('Name'):'Li')">
+        <img id="myAvatar" class="avatar" src="../img/avatar5.jpg">
         <div class="des">
-            <div class="name"><span>Li</span></div>
-            <div class="status"><span style="font-size: 30px;">🏳️‍🌈</span></div>
+            <div class="name"><span id='Name'>Li</span></div>
+            <div class="status"><span id="Status" style="font-size: 20px;">🏳️‍🌈</span></div>
         </div>
     </div>
     <div class="item" onclick="window.location.href='chat.html?name=Suvoj'">
@@ -133,6 +133,12 @@
 </body>
 
 <script>
+    if(localStorage.getItem('Name')!=null)
+        Name.innerHTML=localStorage.getItem('Name');
+    if(localStorage.getItem('Status')!=null)
+        Status.innerHTML=localStorage.getItem('Status');
+    if(localStorage.getItem('avatar')!=null)
+        myAvatar.src=localStorage.getItem('avatar');
     function f(refresh_button){
         refresh_button.classList.add('rotate')
         tip.style.display='block';

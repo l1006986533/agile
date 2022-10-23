@@ -1,0 +1,31 @@
+<html>
+    <body style="text-align:center;">
+        <img id='avatar' src="../img/request.jpg" style="height: 200px; width:200px" onclick="a()"><br><br>
+        <div>Name:&nbsp;<input id="Name"></div><br>
+        <div>Status:&nbsp;<input id="Status"></div><br>
+        <button onclick="localStorage.setItem('Name',Name.value);localStorage.setItem('Status',Status.value);alert('Set successfully!');">Set</button>
+    </body>
+
+    <script>
+        if(localStorage.getItem('avatar')!=null)
+            avatar.src=localStorage.getItem('avatar');
+        if(localStorage.getItem('Name')!=null)
+            Name.value=localStorage.getItem('Name');
+        if(localStorage.getItem('Status')!=null)
+            Status.value=localStorage.getItem('Status');
+        function a(){
+            var reader = new FileReader();
+            var input = document.createElement("input");
+            input.setAttribute('type','file');
+            input.setAttribute('accept',"image/*");
+            input.onchange=function(){
+                reader.readAsDataURL(input.files[0]);
+            }
+            reader.onload = function(event) {
+                localStorage.setItem('avatar',event.target.result)
+                avatar.src=localStorage.getItem('avatar');
+            }
+            input.click();
+        }
+    </script>
+</html>

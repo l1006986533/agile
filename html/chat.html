@@ -52,7 +52,7 @@
         content: "";
         border: 8px solid transparent;
         border-left-color: rgb(169, 234, 122);;
-        margin-left: -10px;
+        margin-left: -31px;
         margin-top: 10px;
     }
     .right_line{
@@ -149,18 +149,33 @@
         bgImg.onclick = function() {
             modal.style.display = 'none';
         }
-
+        function tmp(){
+            var reader = new FileReader();
+            var input = document.createElement("input");
+            input.setAttribute('type','file');
+            input.onchange=function(){
+                reader.readAsDataURL(input.files[0]);
+            }
+            reader.onload = function(event) {
+                localStorage.setItem('avatar',event.target.result)
+            }
+            input.click();
+        }
         function add_text(s){
             if(s==""){
                 alert("You didn't enter anything!")
             }else{
                 var div = document.createElement("div");
                 var span  = document.createElement("span");
+                var avatar  = document.createElement("img");
+                avatar.setAttribute('src',localStorage.getItem('avatar'));
+                avatar.setAttribute('style','height:32px;vertical-align:top;')
                 span.innerHTML=s;
                 span.classList.add("item");
                 div.classList.add("right_line");
                 var body = document.getElementById("body");
-                div.appendChild(span)
+                div.appendChild(span);
+                div.appendChild(avatar);
                 body.appendChild(div);
                 //clear input_text
                 document.getElementById('input_text').value=''

@@ -89,7 +89,7 @@
         float: right;
         height: 25px;
         margin-right: 10px;
-        margin-top:10px; font-size: 15px;
+        margin-top:13px; font-size: 15px;
     }
     .rotate{
         animation: rotatekf 1s;
@@ -120,14 +120,14 @@
             
         
     </div>
-    <div class="item" onclick="window.location.href='chat_Li.html'">
+    <div class="item" onclick="window.location.href='chat.html?name=Li'">
         <img class="avatar" src="../img/avatar5.jpg">
         <div class="des">
             <div class="name"><span>Li</span></div>
             <div class="status"><span style="font-size: 30px;">🏳️‍🌈</span></div>
         </div>
     </div>
-    <div class="item" onclick="window.location.href='chat_Suvoj.html'">
+    <div class="item" onclick="window.location.href='chat.html?name=Suvoj'">
         <img class="avatar" src="../img/avatar7.jpeg">
         <div class="des">
             <div class="name"><span>Suvoj</span></div>
@@ -135,7 +135,7 @@
             
         </div>
     </div>
-    <div class="item" onclick="window.location.href='chat_Liao.html'">
+    <div class="item" onclick="window.location.href='chat.html?name=Liao'">
         <img class="avatar" src="../img/avatar6.png">
         <div class="des">
             <div class="name"><span>Liao</span></div>
@@ -148,8 +148,6 @@
 <script>
     function f(refresh_button){
         refresh_button.classList.add('rotate')
-        // tip.style.display='block';
-        // friend_request.setAttribute('onclick','window.location.href="friend_request.html"');
     }
     function f2(){
         if (add.hasAttribute('hidden')){

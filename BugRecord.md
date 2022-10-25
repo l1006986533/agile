@@ -11,3 +11,6 @@
 
 1006
 1. Set the name to center
+
+1025
+1. Fix a bug, now logout message can show successfully

@@ -114,7 +114,7 @@
         <div class="add" id="add" hidden>
             <input style="margin-top:10px; font-size: 20px;" onkeyup="if(event.keyCode==13) f3(this)">
         </div>
-        <button type="button" class="logout" onclick="window.location.href='login.html'">logout</button>
+        <button type="button" class="logout" onclick="alert('Logged out successfully!');window.location.href='login.html'">logout</button>
     </div>
     <div class="item" onclick="window.location.href='chat.html?name='+(localStorage.getItem('Name')?localStorage.getItem('Name'):'Li')">
         <img id="myAvatar" class="avatar" src="../img/avatar5.jpg">
